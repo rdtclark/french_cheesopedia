@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { eventBus } from './main.js';
 import CheeseList from "./components/CheeseList.vue";
 
 export default {
@@ -41,4 +42,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #fff;
+  color: #444;
+}
+
+h1,
+p {
+  margin: 0 0 1em 0;
+}
+
+
+
 </style>
