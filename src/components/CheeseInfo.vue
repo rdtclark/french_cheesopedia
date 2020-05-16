@@ -3,13 +3,7 @@
 
 <div v-if="cheese" class="cheese-info-container">
     
-<button @click="modalAction()">More Info</button>
-
-    <!-- <div v-if="modal">
-        <h2>{{ cheese.fields.cheese }}</h2>
-        <p>{{ cheese.fields.id }}</p>
-        <p>{{ cheese.fields.milk }}</p>
-    </div> -->
+<button class="btn" @click="modalAction()">More Info</button>
 
     <div v-if="modal" class="modal">
         <div class="container">
@@ -49,22 +43,14 @@ export default {
 
 .modal {
   display: block;
-  
-  /* Probably need media queries here */
-  width: 600px;
+  width: 800px;
   max-width: 100%;
-  
   height: 400px;
   max-height: 100%;
-  
   position: fixed;
-  
   z-index: 100;
-  
   left: 50%;
   top: 50%;
-  
-  /* Use this for centering if unknown width/height */
   transform: translate(-50%, -50%);
   
   /* If known, negative margins are probably better (less chance of blurry text). */
@@ -72,6 +58,8 @@ export default {
   
   background: white;
   box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+  border-radius: 25px;
+  border: 2px solid #73AD21;
 }
 
 .modal-overlay {
@@ -80,24 +68,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 50;
-  
+  z-index: 50; 
   background: rgba(0, 0, 0, 0.6);
-}
-.modal-guts {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  padding: 20px 50px 20px 20px;
 }
 
 .modal .close-button {
   position: absolute;
-  
-  /* don't need to go crazy with z-index here, just sits over .modal-guts */
   z-index: 1;
   
   top: 10px;
@@ -110,19 +86,6 @@ export default {
   color: white;
   padding: 5px 10px;
   font-size: 1.3rem;
-}
-
-.open-button {
-  border: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: lightgreen;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 21px;
 }
 
 </style>
