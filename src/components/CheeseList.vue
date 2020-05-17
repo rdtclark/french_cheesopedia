@@ -69,6 +69,13 @@ ul {
   border-radius: 3px;
 }
 
+.milk {
+  font-size: 2em;
+  padding: 0.5em 0.5em;
+  margin: 0.5em;
+  border-radius: 50%;
+}
+
 .btn:hover,
 .btn:focus {
   background: #2ecc71;

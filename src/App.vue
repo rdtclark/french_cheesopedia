@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <h1>French Cheeseopedia</h1>
-    <p>Selected Milk: {{ selectedMilk }}  
-    <button @click="milkAction('Cow Milk')" class="btn">Cow</button> |
-    <button @click="milkAction('Goat Milk')" class="btn">Goat</button> |
-    <button @click="milkAction('Sheep Milk')" class="btn">Sheep</button>
+    <h2>{{ selectedMilk }}</h2>
+    <p>  
+    <button @click="milkAction('Cow Milk')" class="btn milk">🐄</button>
+    <button @click="milkAction('Goat Milk')" class="btn milk">🐐</button>
+    <button @click="milkAction('Sheep Milk')" class="btn milk">🐑</button>
     </p>
     <cheese-list-component :cheeses="selectedCheeses"></cheese-list-component>
   </div>
