@@ -3,9 +3,9 @@
     <h1>French Cheeseopedia</h1>
     <h2>{{ selectedMilk }}</h2>
     <p>  
-    <button @click="milkAction('Cow Milk')" class="btn milk">🐄</button>
-    <button @click="milkAction('Goat Milk')" class="btn milk">🐐</button>
-    <button @click="milkAction('Sheep Milk')" class="btn milk">🐑</button>
+    <button @click="milkAction('Cow Milk')" class="btn milk cowmilk">🐄</button>
+    <button @click="milkAction('Goat Milk')" class="btn milk goatmilk">🐐</button>
+    <button @click="milkAction('Sheep Milk')" class="btn milk sheepmilk">🐑</button>
     </p>
     <cheese-list-component :cheeses="selectedCheeses"></cheese-list-component>
   </div>

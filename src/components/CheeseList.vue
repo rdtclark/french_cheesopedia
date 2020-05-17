@@ -4,7 +4,7 @@
 
     
     <div class="wrapper">
-        <div class="cheese-box" v-for="(cheese, index) in cheeses" :key="index" :value="index">
+        <div class="cheese-box" :class="cheese.fields.milk.toLowerCase().replace(/\s/g, '')" v-for="(cheese, index) in cheeses" :key="index" :value="index">
             <h3>{{ cheese.fields.cheese }}</h3>
             <cheese-info :cheese="cheese" :id="index"></cheese-info>
             
@@ -74,6 +74,21 @@ ul {
   padding: 0.5em 0.5em;
   margin: 0.5em;
   border-radius: 50%;
+}
+
+.sheepmilk {
+  border: 2px solid purple;
+  background: grey;
+}
+
+.cowmilk {
+  border: 2px solid orange;
+  background: orangered;
+}
+
+.goatmilk {
+  border: 2px solid yellowgreen;
+  background: yellow;
 }
 
 .btn:hover,
