@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <h1>French Cheeseopedia</h1>
-    <cheese-list-component :cheeses="cheeses"></cheese-list-component>
+    <p>Selected Milk: {{ selectedMilk }}  
+    <button @click="milkAction('Cow Milk')" class="btn">Cow</button> |
+    <button @click="milkAction('Goat Milk')" class="btn">Goat</button> |
+    <button @click="milkAction('Sheep Milk')" class="btn">Sheep</button>
+    </p>
+    <cheese-list-component :cheeses="selectedCheeses"></cheese-list-component>
   </div>
 </template>
 
@@ -28,14 +33,27 @@ export default {
       .then(cheeses => this.cheeses = cheeses.records)
       .catch(error => console.log(error))
     },
-    filtered () {
-      const result = this.cheeses.filter(cheese => cheese.fields.milk === "Cow Milk")
-      return this.selectedCheeses.push(result)
+    milkAction(milk) {
+      if (this.selectedMilk != milk) {
+          this.selectedMilk = milk
+      } else {
+          this.selectedMilk = "All"
+      }
+      return this.selectedMilk
     }
   },
   mounted(){
     this.getCheeses();
-    this.filtered();
+  },
+  computed: {
+  filtered() {
+      if (this.selectedMilk === "All" ) {
+        return this.selectedCheeses = this.cheeses
+      } else {
+        const result = this.cheeses.filter(cheese => cheese.fields.milk === this.selectedMilk)
+        return this.selectedCheeses = result
+      }
+    }
   }
 }
 </script>

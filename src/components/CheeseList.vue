@@ -1,6 +1,8 @@
 <template>
 
 <div class="cheese-list" v-if="cheeses">
+
+    
     <div class="wrapper">
         <div class="cheese-box" v-for="(cheese, index) in cheeses" :key="index" :value="index">
             <h3>{{ cheese.fields.cheese }}</h3>
