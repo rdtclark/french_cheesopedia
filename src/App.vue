@@ -13,7 +13,9 @@ export default {
   name: 'App',
   data(){
     return {
-      cheeses: {}
+      cheeses: [],
+      selectedMilk: "All",
+      selectedCheeses: []
     }
   },
   components: {
@@ -25,10 +27,15 @@ export default {
       .then(result => result.json())
       .then(cheeses => this.cheeses = cheeses.records)
       .catch(error => console.log(error))
+    },
+    filtered () {
+      const result = this.cheeses.filter(cheese => cheese.fields.milk === "Cow Milk")
+      return this.selectedCheeses.push(result)
     }
   },
   mounted(){
     this.getCheeses();
+    this.filtered();
   }
 }
 </script>

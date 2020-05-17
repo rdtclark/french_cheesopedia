@@ -52,10 +52,6 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  
-  /* If known, negative margins are probably better (less chance of blurry text). */
-  /* margin: -200px 0 0 -200px; */
-  
   background: white;
   box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
   border-radius: 25px;
@@ -73,14 +69,11 @@ export default {
 }
 
 .modal .close-button {
+  cursor: pointer;
   position: absolute;
   z-index: 1;
-  
   top: 10px;
-  
-  /* needs to look OK with or without scrollbar */
   right: 20px;
-  
   border: 0;
   background: black;
   color: white;
