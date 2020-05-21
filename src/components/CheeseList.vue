@@ -28,11 +28,6 @@ export default {
 
 <style>
 
-.made-with {
-    font-style: italic;
-    text-transform: ;
-}
-
 ul {
     list-style-type: none;
 }

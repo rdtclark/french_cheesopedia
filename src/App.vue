@@ -2,18 +2,24 @@
   <div id="app">
     <h1>French Cheeseopedia</h1>
     <h2>{{ selectedMilk }}</h2>
+    
     <p>  
     <button @click="milkAction('Cow Milk')" class="btn milk cowmilk">🐄</button>
     <button @click="milkAction('Goat Milk')" class="btn milk goatmilk">🐐</button>
     <button @click="milkAction('Sheep Milk')" class="btn milk sheepmilk">🐑</button>
     </p>
+    <cheese-map :cheeses="SelectedCheeses"></cheese-map>
     <cheese-list-component :cheeses="selectedCheeses"></cheese-list-component>
+    
+    
   </div>
 </template>
 
 <script>
 import { eventBus } from './main.js';
 import CheeseList from "./components/CheeseList.vue";
+import CheeseMap from "./components/CheeseMap.vue";
+
 
 export default {
   name: 'App',
@@ -25,7 +31,8 @@ export default {
     }
   },
   components: {
-    "cheese-list-component": CheeseList
+    "cheese-list-component": CheeseList,
+    "cheese-map": CheeseMap
   },
   methods: {
     getCheeses: function(){

@@ -9,7 +9,9 @@
         <div class="container">
             <h3>{{ cheese.fields.cheese }}</h3>
             <p>{{ cheese.fields.id }}</p>
-            <p>{{ cheese.fields.milk }}</p>         
+            <p>{{ cheese.fields.milk }}</p>
+            {{ cheese.geometry.coordinates[0] }}
+            {{ cheese.geometry.coordinates[1] }}
           <button @click="modalAction()" class="close-button" id="close-button">Close</button>
         </div>
     </div>
